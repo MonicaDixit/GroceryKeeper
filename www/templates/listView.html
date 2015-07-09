@@ -1,0 +1,27 @@
+<ion-view>
+  <!--<ion-header-bar class="top">
+    <h1 class="title">Items</h1>
+   
+  </ion-header-bar>-->
+  <ion-content class="has-header">
+   <button class="button button-icon ion-plus" ng-click="newItem()"></button>
+    <ion-list>
+      <ion-item ng-repeat="item in items" ng-class="{purchased: item.status == 'purchased'}">
+        {{item.name}}
+        <!-- {{ item.refilDate | date:"MM/dd/yyyy 'at' h:mma" }}-->
+         <progress-bar header= "{{item.refilDate}}" created="{{item.dateCreated}}"></progress-bar>
+        <ion-option-button class="button-royal" ng-click="purchaseItem(item)">
+        <i class="icon ion-checkmark"></i>
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>   
+
+
+
+
+<!-- var a = moment([2007, 0, 29]);
+var b = moment([2007, 0, 28]);
+var diffInMs = a.diff(b); // 86400000 milliseconds
+var diffInDays = a.diff(b, 'days'); // 1 day -->
